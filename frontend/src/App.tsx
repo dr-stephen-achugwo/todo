@@ -23,7 +23,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get<Task[]>(`http://localhost:5000/api/tasks`);
+        const response = await axios.get<Task[]>(`https://todo-xeqo.onrender.com/routes`);
         console.log("Fetched tasks:", response.data); // Debugging log
         setTasks(response.data);
       } catch (error) {
@@ -40,7 +40,7 @@ const App: React.FC = () => {
     try {
       console.log("Adding task:", task); // Debugging log
       const response = await axios.post<Task>(
-        `http://localhost:5000/api/tasks`,
+        `https://todo-xeqo.onrender.com/routes`,
         { title: task },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -55,7 +55,7 @@ const App: React.FC = () => {
   // BLOCK 6: Delete a task
   const deleteTask = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`);
+      await axios.delete(`https://todo-xeqo.onrender.com/routes/${id}`);
       setTasks(tasks.filter((t) => t._id !== id));
     } catch (error) {
       console.error("Error deleting task:", error);
@@ -66,7 +66,7 @@ const App: React.FC = () => {
   const updateTask = async (id: string, updatedTask: Partial<Task>) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/tasks/${id}`,
+        `https://todo-xeqo.onrender.com/routes/${id}`,
         updatedTask,
         { headers: { "Content-Type": "application/json" } }
       );
