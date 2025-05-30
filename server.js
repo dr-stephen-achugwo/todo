@@ -11,7 +11,7 @@ const app = express();
 
 // BLOCK 3: Setting Up Middleware
 const corsOptions = {
-    origin: "https://todo-lyart-nine-24.vercel.app/",
+    origins: ["https://todo-lyart-nine-24.vercel.app/", "https://todo-client-le6x.onrender.com/"],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Allow credentials (like cookies) to be sent
 };
